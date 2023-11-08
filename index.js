@@ -1,15 +1,30 @@
 
 const options = ["Rock", "Paper", "Scissors"]
-let playerSelection = prompt("Choose: Rock, Paper, Scissors")
+const choices = document.querySelectorAll (".btn");
+let playerSelection;
+
+    
+
+const Rock = document.getElementById("Rock")
+const Paper = document.getElementById("Paper")
+const Scissors = document.getElementById("Scissors")
+
+Rock.addEventListener("click", () => {
+    playerSelection = "Rock"
+})
+Paper.addEventListener("click", () => {
+    playerSelection = "Paper"
+})
+Scissors.addEventListener("click", () => {
+    playerSelection = "Scissors"
+})
+
 function getComputerChoice () {
     let computerChoice = options[Math.floor(Math.random()*options.length)];
     return computerChoice
 }
 
 function playSingleRound (playerSelection, computerSelection) {
-   
-
-     
     if (playerSelection === "Rock" && computerSelection === "Rock") {
         console.log("It's a tie, you both chose Rock")
     } else if (playerSelection === "Rock" && computerSelection === "Paper") {
